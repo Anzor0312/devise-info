@@ -15,7 +15,7 @@ import Flutter
     deviceInfoChannel.setMethodCallHandler({
       (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
             if call.method == "getIosDeviceName" {
-                let deviceName = UIDevice.current.model
+                let deviceName = UIDevice.current.modelName
                 result(deviceName)
             }else if call.method == "getIosSystemVersion" {
                 let systemVersion = UIDevice.current.systemVersion
@@ -24,7 +24,7 @@ import Flutter
                 result(FlutterMethodNotImplemented)
             }
         }
-
+    )
         return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 }
